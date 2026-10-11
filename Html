@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,22v-8.4h2.8l.4-3.3h-3.2V8.2cOne BigFamily — Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg: #ffffff;
+--ink: #0e2238;
+--body: #47586d;
+--blue: #2b6fee;
+--green: #4f9a1f;
+--green-bright: #6bbf2f;
+--card: #f4f7fb;
+--card-border: #e3e9f2;
+--navy-band: #0e2238;
+--navy-band-2: #163257;
+--max: 1160px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+color: var(--body);
+background: var(--bg);
+-webkit-font-smoothing: antialiased;
+}
+h1,h2,h3{
+font-family:'Space Grotesk', sans-serif;
+color: var(--ink);
+margin:0;
+letter-spacing: -0.01em;
+}
+a{ color: inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+.wrap{ max-width: var(--max); margin:0 auto; padding: 0 32px; }
+
+:focus-visible{
+outline: 2px solid var(--blue);
+outline-offset: 3px;
+}
+
+/* ---------- header ---------- */
+header{
+position: sticky; top:0; z-index: 20;
+background: rgba(255,255,255,0.92);
+backdrop-filter: blur(8px);
+border-bottom: 1px solid var(--card-border);
+}
+.header-inner{
+display:flex; align-items:center; justify-content:space-between;
+padding: 18px 0;
+}
+.logo{ display:flex; align-items:center; gap:10px; }
+.logo-mark{
+width:34px; height:34px; border-radius:9px;
+background: linear-gradient(135deg, var(--green-bright), var(--blue));
+display:flex; align-items:center; justify-content:center;
+color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px;
+flex-shrink:0;
+}
+.logo-text{ line-height:1.15; }
+.logo-text .name{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:var(--ink); }
+.logo-text .name span{ color: var(--green); }
+.logo-text .tag{ font-size:11px; color:#8595a8; letter-spacing:0.04em; }
+
+nav ul{ display:flex; gap:34px; list-style:none; margin:0; padding:0; }
+nav a{
+font-size:15px; font-weight:500; color: var(--body);
+padding-bottom:4px; border-bottom: 2px solid transparent;
+transition: color .15s ease, border-color .15s ease;
+}
+nav a:hover{ color: var(--ink); }
+nav a.active{ color: var(--ink); border-bottom-color: var(--green-bright); }
+
+.socials{ display:flex; gap:10px; }
+.socials a{
+width:34px; height:34px; border-radius:50%;
+border:1px solid var(--card-border);
+display:flex; align-items:center; justify-content:center;
+color: var(--ink); transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.socials a:hover{ background: var(--ink); border-color: var(--ink); color:#fff; }
+.socials svg{ width:15px; height:15px; }
+
+.nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+.nav-toggle span{ display:block; width:22px; height:2px; background: var(--ink); margin:4px 0; }
+
+/* ---------- hero ---------- */
+.hero{ padding: 76px 0 88px; }
+.hero-grid{
+display:grid; grid-template-columns: 1.05fr 0.85fr; gap:64px; align-items:center;
+}
+.eyebrow{
+display:flex; align-items:center; gap:10px;
+font-size:13px; font-weight:600; letter-spacing:0.06em; color: var(--green);
+margin-bottom:18px;
+}
+.eyebrow::before{ content:""; width:26px; height:2px; background: var(--green-bright); display:inline-block; }
+.hero h1{
+font-size: clamp(38px, 5vw, 54px); font-weight:700; line-height:1.06;
+}
+.hero h1 .accent{ color: var(--green); }
+.hero p.lede{
+margin-top:22px; font-size:17px; line-height:1.65; max-width: 46ch; color: var(--body);
+}
+.hero-cta{ display:flex; gap:16px; margin-top:34px; flex-wrap:wrap; }
+
+.btn{
+display:inline-flex; align-items:center; gap:9px;
+padding: 13px 26px; border-radius: 10px;
+font-weight:600; font-size:15px; font-family:'Inter',sans-serif;
+transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+border: none; cursor:pointer;
+}
+.btn-primary{
+background: var(--green-bright); color:#0e2238;
+box-shadow: 0 10px 24px -10px rgba(79,154,31,0.55);
+}
+.btn-primary:hover{ transform: translateY(-2px); background:#7ccb3c; }
+.btn-ghost{
+background: transparent; color: var(--ink); border: 1px solid var(--card-border);
+}
+.btn-ghost:hover{ border-color: var(--ink); }
+
+.hero-panel{
+position:relative;
+background: var(--card);
+border: 1px solid var(--card-border);
+border-radius: 22px;
+padding: 34px;
+min-height: 340px;
+display:flex; flex-direction:column; justify-content:space-between;
+overflow:hidden;
+}
+.hero-panel::before{
+content:"";
+position:absolute; top:-60px; right:-60px;
+width:220px; height:220px; border-radius:50%;
+background: radial-gradient(circle, rgba(43,111,238,0.16), transparent 70%);
+}
+.hero-panel::after{
+content:"";
+position:absolute; bottom:-80px; left:-40px;
+width:220px; height:220px; border-radius:50%;
+background: radial-gradient(circle, rgba(107,191,47,0.18), transparent 70%);
+}
+.panel-dots{ display:flex; gap:7px; position:relative; z-index:1; }
+.panel-dots span{ width:9px; height:9px; border-radius:50%; background: var(--card-border); }
+.panel-dots span:nth-child(1){ background: var(--blue); }
+.panel-dots span:nth-child(2){ background: var(--green-bright); }
+
+.panel-quote{
+position:relative; z-index:1;
+font-family:'Caveat', cursive; font-size: 40px; line-height:1.15;
+color: var(--ink); font-weight:600; margin-top:20px;
+}
+.panel-underline{ width:120px; height:3px; margin-top:10px; background: var(--green-bright); border-radius:2px; position:relative; z-index:1; }
+
+.panel-stats{
+position:relative; z-index:1;
+display:flex; gap:28px; margin-top:26px; padding-top:22px;
+border-top: 1px solid var(--card-border);
+}
+.panel-stats div strong{ display:block; font-family:'Space Grotesk',sans-serif; font-size:22px; color: var(--ink); }
+.panel-stats div span{ font-size:12.5px; color:#8595a8; }
+
+/* ---------- services ---------- */
+.services{ padding: 20px 0 96px; }
+.section-head{ max-width: 560px; margin-bottom: 46px; }
+.section-head h2{ font-size: clamp(28px, 3.4vw, 36px); font-weight:700; margin-top:14px; }
+.section-head p{ margin-top:14px; font-size:16px; line-height:1.6; }
+
+.grid{
+display:grid; grid-template-columns: repeat(3, 1fr); gap:22px;
+}
+.card{
+background:#fff;
+border: 1px solid var(--card-border);
+border-radius: 16px;
+padding: 30px 26px;
+transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.card:hover{
+border-color: transparent;
+box-shadow: 0 18px 36px -22px rgba(14,34,56,0.28);
+transform: translateY(-3px);
+}
+.icon{
+width:48px; height:48px; border-radius:12px;
+display:flex; align-items:center; justify-content:center;
+margin-bottom:20px;
+}
+.icon svg{ width:22px; height:22px; }
+.icon.blue{ background:#e8f0ff; color: var(--blue); }
+.icon.green{ background:#eaf6df; color: var(--green); }
+.icon.navy{ background:#e7ecf3; color: var(--ink); }
+.icon.teal{ background:#e2f6f2; color:#0f9d84; }
+.icon.amber{ background:#fdefdd; color:#c47a12; }
+.icon.rose{ background:#fbe6ea; color:#c93356; }
+
+.card h3{ font-size:19px; font-weight:600; margin-bottom:10px; }
+.card p{ font-size:14.5px; line-height:1.6; margin:0 0 18px; }
+.card-link{
+font-size:14px; font-weight:600; color: var(--ink);
+display:inline-flex; align-items:center; gap:6px;
+}
+.card-link svg{ width:14px; height:14px; transition: transform .15s ease; }
+.card:hover .card-link svg{ transform: translateX(3px); }
+
+/* ---------- CTA band ---------- */
+.cta-band{
+background: linear-gradient(120deg, var(--navy-band), var(--navy-band-2));
+padding: 68px 0;
+position:relative; overflow:hidden;
+}
+.cta-band::before{
+content:"";
+position:absolute; top:-100px; right:8%;
+width:320px; height:320px; border-radius:50%;
+background: radial-gradient(circle, rgba(107,191,47,0.20), transparent 70%);
+}
+.cta-grid{
+display:flex; justify-content:space-between; align-items:center; gap:40px; position:relative; z-index:1;
+}
+.cta-band .eyebrow{ color: var(--green-bright); }
+.cta-band h2{ color:#fff; font-size: clamp(26px,3.2vw,34px); font-weight:700; margin-top:12px; }
+.cta-band p{ color:#b7c4d6; margin-top:12px; font-size:15.5px; max-width:42ch; line-height:1.6; }
+.cta-band .btn-primary{ margin-top:26px; }
+
+/* ---------- footer ---------- */
+footer{ padding: 46px 0 30px; border-top: 1px solid var(--card-border); }
+.footer-top{
+display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;
+padding-bottom: 28px; margin-bottom: 22px; border-bottom: 1px solid var(--card-border);
+}
+footer nav ul{ gap:26px; }
+.footer-bottom{
+display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+font-size:13px; color:#8595a8;
+}
+
+@media (max-width: 880px){
+.hero-grid{ grid-template-columns: 1fr; }
+.hero-panel{ order:-1; }
+.grid{ grid-template-columns: repeat(2, 1fr); }
+nav{ display:none; }
+.nav-toggle{ display:block; }
+.cta-grid{ flex-direction:column; align-items:flex-start; text-align:left; }
+}
+@media (max-width: 560px){
+.wrap{ padding:0 20px; }
+.grid{ grid-template-columns: 1fr; }
+.hero{ padding: 52px 0 60px; }
+.socials{ display:none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+*{ transition:none !important; scroll-behavior:auto !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap header-inner">
+<a class="logo" href="#">
+<span class="logo-mark">OE</span>
+<span class="logo-text">
+<div class="name">Osituwo <span>Elijah</span></div>
+<div class="tag">DREAM · BUILD · IMPACT</div>
+</span>
+</a>
+<nav aria-label="Primary">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Projects</a></li>
+<li><a class="active" href="#">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="socials" aria-label="Social links">
+<a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.2c0-.95.26-1.6 1.63-1.6H17V3.6C16.6 3.5 15.5 3.4 14.2 3.4c-2.7 0-4.5 1.65-4.5 4.68v2.22H6.9v3.3h2.8V22h3.8z"/></svg></a>
+<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4zm0 6.1a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm4.7-6.25a.87.87 0 1 1-1.73 0 .87.87 0 0 1 1.73 0zM20 7.2c-.06-1.26-.35-2.37-1.27-3.29S16.66 2.66 15.4 2.6C14.1 2.53 9.9 2.53 8.6 2.6 7.34 2.66 6.23 2.95 5.31 3.87S3.9 5.94 3.84 7.2c-.07 1.3-.07 5.5 0 6.8.06 1.26.35 2.37 1.27 3.29s2.03 1.21 3.29 1.27c1.3.07 5.5.07 6.8 0 1.26-.06 2.37-.35 3.29-1.27s1.21-2.03 1.27-3.29c.07-1.3.07-5.5 0-6.8zM17.9 16.2a2.9 2.9 0 0 1-1.65 1.65c-1.14.45-3.85.35-5.25.35s-4.11.1-5.25-.35a2.9 2.9 0 0 1-1.65-1.65c-.45-1.14-.35-3.85-.35-5.25s-.1-4.11.35-5.25A2.9 2.9 0 0 1 5.75 4.05c1.14-.45 3.85-.35 5.25-.35s4.11-.1 5.25.35a2.9 2.9 0 0 1 1.65 1.65c.45 1.14.35 3.85.35 5.25s.1 4.11-.35 5.25z"/></svg></a>
+<a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.4 4v3c-1.5 0-2.9-.4-4.1-1.2v6.5c0 3.2-2.6 5.7-5.7 5.7S5.5 18.5 5.5 15.3s2.6-5.7 5.7-5.7c.4 0 .8 0 1.2.1v3.1c-.4-.1-.8-.2-1.2-.2-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.8-1.1 2.8-2.7V3h2.6z"/></svg></a>
+<a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.24-.87-.93-1.56-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4c-.87.24-1.56.93-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.24.87.93 1.56 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.5c.87-.24 1.56-.93 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.2V8.8L15.5 12 10 15.2z"/></svg></a>
+</div>
+<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Services</div>
+<h1>What I do<br>& <span class="accent">offer</span></h1>
+<p class="lede">I provide creative, technical and educational solutions that help individuals, businesses and communities grow, learn and achieve their goals.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#contact">Start a project</a>
+<a class="btn btn-ghost" href="#services">See services</a>
+</div>
+</div>
+<div class="hero-panel">
+<div class="panel-dots"><span></span><span></span></div>
+<div>
+<p class="panel-quote">Ideas into real impact.</p>
+<div class="panel-underline"></div>
+</div>
+<div class="panel-stats">
+<div><strong>6</strong><span>service areas</span></div>
+<div><strong>3</strong><span>disciplines</span></div>
+<div><strong>1</strong><span>mission</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">What's on offer</div>
+<h2>Six ways to work together</h2>
+<p>From shipping code to running workshops, each service is built around the same goal — turning an idea into something people can actually use.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon green">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+</div>
+<h3>Web development</h3>
+<p>Modern, responsive and user-friendly websites and web applications using the latest technologies.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<div class="card">
+<div class="icon blue">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5l-8-3z"/></svg>
+</div>
+<h3>Cybersecurity & tech training</h3>
+<p>Practical training to help young minds gain valuable tech skills, stay safe online and build future-ready careers.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<div class="card">
+<div class="icon navy">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3" height="8"/><rect x="11" y="8" width="3" height="12"/><rect x="16" y="4" width="3" height="16"/></svg>
+</div>
+<h3>Business & consulting</h3>
+<p>Strategic support for startups, small businesses and organizations to improve systems and achieve growth.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<div class="card">
+<div class="icon amber">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+</div>
+<h3>Creative writing & screenwriting</h3>
+<p>Compelling stories, scripts and content that inform, inspire and entertain.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<div class="card">
+<div class="icon teal">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+</div>
+<h3>Education & mentorship</h3>
+<p>Support for learners through tutoring, learning resources and guidance for a brighter future.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+<div class="card">
+<div class="icon rose">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+</div>
+<h3>Community & volunteer support</h3>
+<p>Helping people in need through health support, outreach and community development projects.</p>
+<a class="card-link" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cta-band" id="contact">
+<div class="wrap cta-grid">
+<div>
+<div class="eyebrow">Let's work together</div>
+<h2>Have a project in mind?</h2>
+<p>Whether you need a website, training, Art work, support, or just want to collaborate — we are always open to new opportunities.</p>
+<a class="btn btn-primary" href="#">Contact me
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="footer-top">
+<a class="logo" href="#">
+<span class="logo-mark">O.B.F</span>
+<span class="logo-text">
+<div class="name">One Big<span>Family</span></div>
+<div class="tag">DREAM · BUILD · IMPACT</div>
+</span>
+</a>
+<nav aria-label="Footer">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="socials" aria-label="Social links">
+<a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.2c0-.95.26-1.6 1.63-1.6H17V3.6C16.6 3.5 15.5 3.4 14.2 3.4c-2.7 0-4.5 1.65-4.5 4.68v2.22H6.9v3.3h2.8V22h3.8z"/></svg></a>
+<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4zm0 6.1a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm4.7-6.25a.87.87 0 1 1-1.73 0 .87.87 0 0 1 1.73 0zM20 7.2c-.06-1.26-.35-2.37-1.27-3.29S16.66 2.66 15.4 2.6C14.1 2.53 9.9 2.53 8.6 2.6 7.34 2.66 6.23 2.95 5.31 3.87S3.9 5.94 3.84 7.2c-.07 1.3-.07 5.5 0 6.8.06 1.26.35 2.37 1.27 3.29s2.03 1.21 3.29 1.27c1.3.07 5.5.07 6.8 0 1.26-.06 2.37-.35 3.29-1.27s1.21-2.03 1.27-3.29c.07-1.3.07-5.5 0-6.8zM17.9 16.2a2.9 2.9 0 0 1-1.65 1.65c-1.14.45-3.85.35-5.25.35s-4.11.1-5.25-.35a2.9 2.9 0 0 1-1.65-1.65c-.45-1.14-.35-3.85-.35-5.25s-.1-4.11.35-5.25A2.9 2.9 0 0 1 5.75 4.05c1.14-.45 3.85-.35 5.25-.35s4.11-.1 5.25.35a2.9 2.9 0 0 1 1.65 1.65c.45 1.14.35 3.85.35 5.25s.1 4.11-.35 5.25z"/></svg></a>
+<a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.4 4v3c-1.5 0-2.9-.4-4.1-1.2v6.5c0 3.2-2.6 5.7-5.7 5.7S5.5 18.5 5.5 15.3s2.6-5.7 5.7-5.7c.4 0 .8 0 1.2.1v3.1c-.4-.1-.8-.2-1.2-.2-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.8-1.1 2.8-2.7V3h2.6z"/></svg></a>
+<a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.24-.87-.93-1.56-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4c-.87.24-1.56.93-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.24.87.93 1.56 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.5c.87-.24 1.56-.93 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.2V8.8L15.5 12 10 15.2z"/></svg></a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 ONE BIG FAMILY. All rights reserved.</span>
+<span>Dream · Build · Impact</span>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
+
